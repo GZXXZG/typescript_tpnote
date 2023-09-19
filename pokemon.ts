@@ -1,12 +1,15 @@
 class Pokemon{
-    private nom: String;
-    private pointsDeVie: number;
-    private pointsAttaque: number;
+    protected nom: String;
+    protected pointsDeVie: number;
+    protected pointsAttaque: number;
 
-    public constructor(nom: String, pointsDeVie: number, pointsAttaque: number){
+    protected type: String;
+
+    public constructor(nom: String, pointsDeVie: number, pointsAttaque: number, type: String){
         this.nom = nom;
         this.pointsDeVie = pointsDeVie;
         this.pointsAttaque = pointsAttaque;
+        this.type = type;
     }
 
     estMort(): boolean {
@@ -20,8 +23,23 @@ class Pokemon{
         if (p.pointsDeVie == 0)
             console.log("Le pokémon visé n'a plus de points de vie");
         else{
-            p.pointsDeVie -= this.pointsAttaque;
-            console.log(`Attaque réussie ! Le pokémon visé n'a plus que ${p.pointsDeVie} points de vie !`);
+            // Type Eau
+            if (this.type == "Eau"){
+
+                if(p.type == "Eau"){
+                    p.pointsDeVie -= this.pointsAttaque;
+                    console.log(`Attaque réussie ! ${p.nom} n'a plus que ${p.pointsDeVie} points de vie !`);
+                }
+                if(p.type == "Plante"){
+                    p.pointsDeVie -= this.pointsAttaque*0.5;
+                    console.log(`Ce n'est pas très efficace ! ${p.nom} n'a plus que ${p.pointsDeVie} points de vie !`);
+                }
+                if(p.type == "Feu"){
+                    p.pointsDeVie -= this.pointsAttaque*2;
+                    console.log(`C'est très efficace ! ${p.nom} n'a plus que ${p.pointsDeVie} points de vie !`);
+                }
+
+            }
         }
     }
 
@@ -30,8 +48,16 @@ class Pokemon{
     }
 }
 
-let pikachu = new Pokemon("Pikachu", 100, 10);
-let carapuce = new Pokemon("Carapuce", 100, 10);
-console.log(pikachu.estMort());
+let salameche = new Pokemon("Salamèche", 50, 10, "Feu");
+let carapuce = new Pokemon("Carapuce", 50, 10, "Eau");
+let bulbizarre = new Pokemon("Bulbizarre", 50, 10, "Plante");
+console.log(salameche.estMort());
 carapuce.afficherInformations();
-pikachu.attaquer(carapuce);
+salameche.attaquer(carapuce);
+salameche.attaquer(bulbizarre);
+
+carapuce.attaquer(salameche);
+carapuce.attaquer(bulbizarre);
+
+bulbizarre.attaquer(carapuce);
+bulbizarre.attaquer(salameche);
