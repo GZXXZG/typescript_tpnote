@@ -1,3 +1,4 @@
+// Romain GERARD TP2 BUT3
 var Pokemon = /** @class */ (function () {
     function Pokemon(nom, pointsDeVie, pointsAttaque, type) {
         this.nom = nom;

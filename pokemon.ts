@@ -1,3 +1,4 @@
+// Romain GERARD TP2 BUT3
 class Pokemon{
     protected nom: String;
     protected pointsDeVie: number;
