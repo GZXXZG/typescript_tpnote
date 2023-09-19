@@ -1,13 +1,19 @@
 class Personne{
+    static nbInstance = 0;
     constructor(nom, age){
         this.nom = nom;
         this.age = age;
+        Personne.nbInstance++;
     }
     sePresenter(){
         console.log("Je suis "+this.nom+" et j'ai "+this.age+" ans");
     }
-    afficherNombrePersonnes(){
-
+    
+    Personne(){nbInstance++;}
+    Enfant(){nbInstance++;}
+    
+    afficherNombrePersonnes() {
+        console.log("Il y a "+Personne.nbInstance+" personnes.")
     }
 }
 
@@ -20,6 +26,7 @@ class Enfant extends Personne{
         console.log("Je suis un enfant");
     }
 }
+
 let personne2 = new Enfant("Loic", 12);
 personne2.sePresenter();
-console.log(personne2 instanceof Personne );
+personne1.afficherNombrePersonnes();
