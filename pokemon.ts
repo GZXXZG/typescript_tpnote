@@ -106,7 +106,7 @@ class Pokemon{
     }
 
     afficherInformations(): void {
-        console.log(`${this.nom} a ${this.pointsAttaque} points d'attaque. Il lui reste ${this.pointsDeVie} points de vie !`);
+        console.log(`${this.nom} a ${this.pointsAttaque} points d'attaque. Il lui reste ${this.pointsDeVie} points de vie. Il est de type ${this.type} !`);
     }
 }
 
@@ -129,3 +129,4 @@ carapuce.attaquer(salameche);
 carapuce.attaquer(salameche);
 carapuce.attaquer(salameche);
 carapuce.attaquer(salameche);
+console.log(salameche.estMort());

@@ -91,7 +91,7 @@ var Pokemon = /** @class */ (function () {
         }
     };
     Pokemon.prototype.afficherInformations = function () {
-        console.log("".concat(this.nom, " a ").concat(this.pointsAttaque, " points d'attaque. Il lui reste ").concat(this.pointsDeVie, " points de vie !"));
+        console.log("".concat(this.nom, " a ").concat(this.pointsAttaque, " points d'attaque. Il lui reste ").concat(this.pointsDeVie, " points de vie. Il est de type ").concat(this.type, " !"));
     };
     return Pokemon;
 }());
@@ -110,3 +110,4 @@ carapuce.attaquer(salameche);
 carapuce.attaquer(salameche);
 carapuce.attaquer(salameche);
 carapuce.attaquer(salameche);
+console.log(salameche.estMort());
