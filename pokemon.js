@@ -30,6 +30,36 @@ var Pokemon = /** @class */ (function () {
                     console.log("C'est tr\u00E8s efficace ! ".concat(p.nom, " n'a plus que ").concat(p.pointsDeVie, " points de vie !"));
                 }
             }
+            // Type Feu
+            if (this.type == "Feu") {
+                if (p.type == "Feu") {
+                    p.pointsDeVie -= this.pointsAttaque;
+                    console.log("Attaque r\u00E9ussie ! ".concat(p.nom, " n'a plus que ").concat(p.pointsDeVie, " points de vie !"));
+                }
+                if (p.type == "Eau") {
+                    p.pointsDeVie -= this.pointsAttaque * 0.5;
+                    console.log("Ce n'est pas tr\u00E8s efficace ! ".concat(p.nom, " n'a plus que ").concat(p.pointsDeVie, " points de vie !"));
+                }
+                if (p.type == "Plante") {
+                    p.pointsDeVie -= this.pointsAttaque * 2;
+                    console.log("C'est tr\u00E8s efficace ! ".concat(p.nom, " n'a plus que ").concat(p.pointsDeVie, " points de vie !"));
+                }
+            }
+            // Type Plante
+            if (this.type == "Plante") {
+                if (p.type == "Plante") {
+                    p.pointsDeVie -= this.pointsAttaque;
+                    console.log("Attaque r\u00E9ussie ! ".concat(p.nom, " n'a plus que ").concat(p.pointsDeVie, " points de vie !"));
+                }
+                if (p.type == "Feu") {
+                    p.pointsDeVie -= this.pointsAttaque * 0.5;
+                    console.log("Ce n'est pas tr\u00E8s efficace ! ".concat(p.nom, " n'a plus que ").concat(p.pointsDeVie, " points de vie !"));
+                }
+                if (p.type == "Eau") {
+                    p.pointsDeVie -= this.pointsAttaque * 2;
+                    console.log("C'est tr\u00E8s efficace ! ".concat(p.nom, " n'a plus que ").concat(p.pointsDeVie, " points de vie !"));
+                }
+            }
         }
     };
     Pokemon.prototype.afficherInformations = function () {

@@ -57,6 +57,23 @@ class Pokemon{
                 }
 
             }
+            // Type Plante
+            if (this.type == "Plante"){
+
+                if(p.type == "Plante"){
+                    p.pointsDeVie -= this.pointsAttaque;
+                    console.log(`Attaque réussie ! ${p.nom} n'a plus que ${p.pointsDeVie} points de vie !`);
+                }
+                if(p.type == "Feu"){
+                    p.pointsDeVie -= this.pointsAttaque*0.5;
+                    console.log(`Ce n'est pas très efficace ! ${p.nom} n'a plus que ${p.pointsDeVie} points de vie !`);
+                }
+                if(p.type == "Eau"){
+                    p.pointsDeVie -= this.pointsAttaque*2;
+                    console.log(`C'est très efficace ! ${p.nom} n'a plus que ${p.pointsDeVie} points de vie !`);
+                }
+
+            }
         }
     }
 
